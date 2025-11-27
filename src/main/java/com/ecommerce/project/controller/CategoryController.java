@@ -35,7 +35,7 @@ public class CategoryController {
     public ResponseEntity<String> deleteCategory( @PathVariable Long categoryId  ){
        try{
         String status=categoryService.deleteCategory(categoryId);
-        // return new responseEntity<>(status,HttpStatus.ok);
+//         return new responseEntity<>(status,HttpStatus.ok);
         // return ResponseEntity.ok(status);
        return  ResponseEntity.status(HttpStatus.OK).body(status);
     }catch (ResponseStatusException e){
