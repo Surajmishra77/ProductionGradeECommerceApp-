@@ -1,7 +1,21 @@
 package com.ecommerce.project.model;
 
+import jakarta.persistence.*;
+
+@Entity(name="categories")
+
 public class Category {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long categoryId;
+    private  String categoryName;
+    @Version
+    private Integer version;
+
+
+    public Category() {
+    }
+
 
     public Category(Long categoryId, String categoryName) {
         this.categoryId = categoryId;
@@ -24,6 +38,6 @@ public class Category {
         this.categoryName = categoryName;
     }
 
-    private  String categoryName;
+
 
 }
